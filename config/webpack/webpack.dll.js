@@ -15,13 +15,12 @@ const vendors = [
   'react',
   'react-dom',
   'react-redux',
-  'react-router',
+  'react-router-dom',
   'react-immutable-proptypes',
   'redux',
   'redux-actions',
   'redux-observable',
   'rxjs',
-  'styled-components'
 ];
 
 if (process.env.NODE_ENV === 'development') {

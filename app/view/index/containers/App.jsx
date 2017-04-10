@@ -1,31 +1,26 @@
 import React from 'react';
-import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
-import TodoList from './TodoList';
+import { HashRouter as Router, NavLink, Route } from 'react-router-dom';
+import Login from './Login';
+import './app.pcss';
 
-function App({ todoList }) {
+function App(state) {
   return (
-    <div>
-      <div style={{ background: 'rgba(0, 0, 0, 0.075)', padding: '20px', border: '1px solid #ccc' }}>
-        <TodoList todoList={todoList} />
+    <Router history={state}>
+      <div id="app">
+        <NavLink activeClassName="selected" to={'/'}>root</NavLink>
+        <br />
+        <NavLink activeClassName="selected" to={'/go'}>go</NavLink>
+        <Route exact path={'/'} render={() => (<h1>Hello word!</h1>)} />
+        <Route path={'/go'} component={Login} />
       </div>
-      <p style={{ fontSize: '14px' }}>
-        <strong className="rt">
-          <a href="https://github.com/sayll">Sayll</a>
-        </strong>
-        <span className="rt">by&nbsp;</span>
-      </p>
-    </div>
+    </Router>
   );
 }
 
-App.propTypes = {
-  todoList: ImmutablePropTypes.list.isRequired
-};
+App.propTypes = {};
 
-function mapStateToProps(state) {
-  return {
-    todoList: state.todos
-  };
+function mapStateToProps() {
+  return {};
 }
 export default connect(mapStateToProps, {})(App);

@@ -1,7 +1,7 @@
-const base      = require('../base/base'),
-      files     = require('../base/files'),
-      HappyPack = require('happypack'),
-      webpack   = require('webpack');
+const base = require('../base/base');
+const files = require('../base/files');
+const HappyPack = require('happypack');
+const webpack = require('webpack');
 
 function cHappypack(id, loaders) {
   return new HappyPack({
@@ -11,10 +11,10 @@ function cHappypack(id, loaders) {
     cache: true,
     threads: 4,
     cacheContext: {
-      env: process.env.NODE_ENV
+      env: process.env.NODE_ENV,
     },
-    loaders: loaders
-  })
+    loaders: loaders,
+  });
 }
 
 const vendorsJson = files.dllPath + '/vendors.json';
@@ -38,10 +38,10 @@ module.exports = [
             }
           });
         }*/
-        require("postcss-cssnext")(({
+        require('postcss-cssnext')(({
           features: {
-            customProperties: false
-          }
+            customProperties: false,
+          },
         })),
         /**
          * 以下部分为了针对mobile做处理
@@ -50,13 +50,13 @@ module.exports = [
         //require("postcss-import")({root: files.cssPath}),
         //require("postcss-extend")(),
         //require("postcss-url")(),
-        /*require("postcss-px2rem")({
+        require("postcss-px2rem")({
           remUnit     : 75,
           remPrecision: 8,
           baseDpr     : 2 // 默认2倍视角
-        })*/
-      ]
-    }
+        })
+      ],
+    },
   }),
 
   new webpack.NoEmitOnErrorsPlugin(),
@@ -69,7 +69,7 @@ module.exports = [
 
   new webpack.DllReferencePlugin({
     context: '/',
-    manifest: require(vendorsJson)
+    manifest: require(vendorsJson),
   }),
 
   cHappypack('ESLint', ['eslint-loader']),
@@ -78,6 +78,6 @@ module.exports = [
 
   cHappypack('JSX', [{
     loader: 'babel-loader',
-    query: require('./babel')
+    query: require('./babel'),
   }]),
 ];
