@@ -1,8 +1,8 @@
-const base       = require('./base/base.js'),
-      files      = require('./base/files'),
-      path       = require('path'),
-      webpack    = require('webpack'),
-      Visualizer = require('webpack-visualizer-plugin');
+const base = require('./base/base.js');
+const files = require('./base/files');
+const path = require('path');
+const webpack = require('webpack');
+const Visualizer = require('webpack-visualizer-plugin');
 
 const vendors = [
   /**
@@ -50,11 +50,11 @@ let config = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-      }
+      },
     }),
     new Visualizer({
-      filename: './vendors.html'
-    })
+      filename: './vendors.html',
+    }),
   ],
 };
 
