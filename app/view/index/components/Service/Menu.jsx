@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './menu.pcss';
 import img0 from '../../../../source/img/menu/0.png';
 import img1 from '../../../../source/img/menu/1.png';
 import img2 from '../../../../source/img/menu/2.png';
@@ -9,26 +11,26 @@ import img6 from '../../../../source/img/menu/6.png';
 import img7 from '../../../../source/img/menu/7.png';
 
 const items = [
-  { name: '洗衣人员', icon: img0, href: '/', key: 0 },
-  { name: '保洁人员', icon: img1, href: '/', key: 1 },
-  { name: '保姆人员', icon: img2, href: '/', key: 2 },
-  { name: '清洗人员', icon: img3, href: '/', key: 3 },
-  { name: '保修人员', icon: img4, href: '/', key: 4 },
-  { name: '跑腿人员', icon: img5, href: '/', key: 5 },
-  { name: '维修人员', icon: img6, href: '/', key: 6 },
-  { name: '生鲜人员', icon: img7, href: '/', key: 7 },
+  { name: '洗衣', icon: img0, href: '/', key: 0 },
+  { name: '保洁', icon: img1, href: '/', key: 1 },
+  { name: '保姆', icon: img2, href: '/', key: 2 },
+  { name: '清洗', icon: img3, href: '/', key: 3 },
+  { name: '保修', icon: img4, href: '/', key: 4 },
+  { name: '跑腿', icon: img5, href: '/', key: 5 },
+  { name: '维修', icon: img6, href: '/', key: 6 },
+  { name: '生鲜', icon: img7, href: '/', key: 7 },
 ];
 
-function EmployeeLogin() {
+function Menu() {
   return (
-    <ul className="employeeLogin clear">
+    <ul className="serviceMenu">
       {
         items.map(item => (
           <li key={item.key}>
-            <a href={item.href}>
+            <Link to={item.href}>
               <img src={item.icon} alt="" />
               <p>{item.name}</p>
-            </a>
+            </Link>
           </li>
         ))
       }
@@ -36,4 +38,4 @@ function EmployeeLogin() {
   );
 }
 
-export default EmployeeLogin;
+export default Menu;

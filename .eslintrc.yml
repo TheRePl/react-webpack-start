@@ -36,7 +36,7 @@ rules:
     - error
     - single
   react/jsx-uses-vars: warn
-  # 非交互标签无法使用鼠标事件
+  react/forbid-prop-types: off
   jsx-a11y/no-static-element-interactions: off
   semi:
     - error
