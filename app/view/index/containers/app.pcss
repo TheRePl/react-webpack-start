@@ -1,140 +1,88 @@
 #root, #app {
+  position: relative;
   width: 750px;
   overflow-x: hidden;
   height: 100%;
   margin: 0 auto;
 }
 
-/**
-* @ Login
-**/
-.Login {
-  height: 100%;
-  & .header {
-    position: relative;
-    padding-top: 30px;
-    padding-bottom: 25px;
-    text-align: center;
-    font-size: 28px; /*px*/
-    background-color: #3f3b3a;
-    color: #eee;
-    & a {
-      position: absolute;
-      top: 20px;
-      left: 40px;
-      color: #eee;
-      font-size: 40px; /*px*/
-    }
-  }
-}
-
-.employeeLogin {
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px; /*px*/
+  line-height: 70px; /*px*/
+  background-color: #fff;
+  border: 2px solid #eee;
   & li {
     box-sizing: border-box;
-    position: relative;
-    width: calc(100% / 3);
-    height: 250px;
+    width: 25%;
     float: left;
-    border-bottom: 1px solid #eee; /*px*/
-    border-right: 1px solid #eee; /*px*/
-    &:nth-child(3n) {
-      border-right-width: 0 !important;
-    }
-    & p {
-      position: absolute;
-      width: 100%;
-      bottom: 45px;
-      text-align: center;
+    text-align: center;
+    & .active {
+      color: #f8b62c;
     }
   }
-
-  & img {
-    position: absolute;
-    top: 30px;
-    left: 65px;
-    width: 120px;
-    height: 120px;
+  & a::before {
+    display: inline-block;
+    position: relative;
+    top: 4px; /*px*/
+    width: 30px; /*px*/
+    height: 30px; /*px*/
+    margin-right: 6px;
+    content: '';
+  }
+  & .linkIndex {
+    & a::before {
+      background: url("../../../source/img/footer/index.png") no-repeat;
+      background-size: cover;
+    }
+    & .active::before {
+      background: url("../../../source/img/footer/indexActive.png") no-repeat;
+      background-size: cover;
+    }
+  }
+  & .linkOrder {
+    & a::before {
+      background: url("../../../source/img/footer/order.png") no-repeat;
+      background-size: cover;
+    }
+    & .active::before {
+      background: url("../../../source/img/footer/orderActive.png") no-repeat;
+      background-size: cover;
+    }
+  }
+  & .linkRecharge {
+    & a::before {
+      background: url("../../../source/img/footer/recharge.png") no-repeat;
+      background-size: cover;
+    }
+    & .active::before {
+      background: url("../../../source/img/footer/rechargeActive.png") no-repeat;
+      background-size: cover;
+    }
+  }
+  & .linkHome {
+    & a::before {
+      background: url("../../../source/img/footer/home.png") no-repeat;
+      background-size: cover;
+    }
+    & .active::before {
+      background: url("../../../source/img/footer/homeActive.png") no-repeat;
+      background-size: cover;
+    }
   }
 }
 
-.register {
-  position: relative;
-  height: calc(100% - 92px);
-  background: url("../../../source/img/login/9.jpg") no-repeat;
-  background-position-y: -100px;
+.selectAreaIcon {
+  position: absolute;
+  z-index: 100;
+  top: 20px;
+  left: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url("../../../source/img/service/selectArea.png") no-repeat;
   background-size: cover;
-
-  & form {
-    position: absolute;
-    padding: 0 300px 120px 300px;
-    top: 455px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: url("../../../source/img/login/registerColor.png");
-
-    & input[type="text"] {
-      box-sizing: border-box;
-      width: 478px;
-      height: 65px;
-      padding: 18px 75px;
-      border-width: 0;
-      background: rgba(000, 000, 000, 0);
-    }
-
-    & >input[type="button"] {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 250px;
-      height: 88px;
-      border-width: 0;
-      background: url("../../../source/img/login/16.png") no-repeat;
-      background-size: contain;
-    }
-    /* 输入框 */
-    & div {
-      position: relative;
-      margin-top: 24px;
-      background-size: contain !important;
-      & input[type="button"] {
-        position: absolute;
-        top: -2px;/*px*/
-        right: -2px;/*px*/
-        width: 160px;
-        height: 65px;
-        border-width: 0;
-        border-radius: 30px;
-        font-size: 26px;/*px*/
-        background: #8ec31f;
-        color: #e5f0cc;
-      }
-      &:nth-child(1) {
-        height: 100px;
-        background: url("../../../source/img/login/10.png") no-repeat;
-        & input {
-          margin-top: 37px;
-        }
-      }
-      &:nth-child(2) {
-        background: url("../../../source/img/login/11.png") no-repeat;
-      }
-      &:nth-child(3) {
-        background: url("../../../source/img/login/12.png") no-repeat;
-      }
-    }
-    /* 单选按钮 */
-    & ul {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 17px;
-      margin-bottom: 65px;
-      & input[type="radio"]{
-        margin-right: 15px;
-      }
-    }
-  }
-}
-
-.selected{
-  color: red;
 }

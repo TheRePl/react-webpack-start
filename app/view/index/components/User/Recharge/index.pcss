@@ -1,0 +1,151 @@
+#recharge {
+  min-height: calc(100vh - 90px);/*px*/
+  background-color: #efefef;
+  & .menu {
+    height: 104px;
+    line-height: 104px;
+    background-color: #fff;
+    & li {
+      float: left;
+      width: calc(100% / 3);
+      border-bottom: 4px solid #efefef; /*px*/
+      text-align: center;
+      &::before {
+        display: inline-block;
+        content: '';
+        width: 50px;
+        height: 50px;
+      }
+      &:nth-child(1)::before {
+        position: relative;
+        top: 16px;
+        background: url("../../../../../source/img/user/recharge0.png") no-repeat;
+        background-size: cover;
+      }
+      &:nth-child(2)::before {
+        position: relative;
+        top: 16px;
+        background: url("../../../../../source/img/user/recharge1.png") no-repeat;
+        background-size: cover;
+      }
+      &:nth-child(3)::before {
+        position: relative;
+        top: 16px;
+        background: url("../../../../../source/img/user/recharge2.png") no-repeat;
+        background-size: cover;
+      }
+    }
+    & .active {
+      border-bottom: 4px solid #f8b62c; /*px*/
+      color: #f8b62c;
+      transition: border-color .4s;
+      &:nth-child(1)::before {
+        position: relative;
+        top: 16px;
+        background: url("../../../../../source/img/user/recharge3.png") no-repeat;
+        background-size: cover;
+      }
+      &:nth-child(2)::before {
+        position: relative;
+        top: 16px;
+        background: url("../../../../../source/img/user/recharge4.png") no-repeat;
+        background-size: cover;
+      }
+      &:nth-child(3)::before {
+        position: relative;
+        top: 16px;
+        background: url("../../../../../source/img/user/recharge5.png") no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+  & .userTitle {
+    background-color: #fff;
+    margin-bottom: 20px;
+    & li {
+      float: left;
+      width: 50%;
+      height: 80px;
+      line-height: 80px;
+      text-align: center;
+      & img {
+        width: 50px;
+        margin-right: 20px;
+      }
+      &:last-child {
+        color: red;
+      }
+    }
+  }
+  & .card1 {
+    padding: 20px 40px;
+    background: #fff;
+    & h2 {
+      font-size: 30px;
+    }
+    & ul {
+      & li {
+        width: 278px;
+        height: 94px;
+        margin: 16px;
+        text-align: center;
+        background: url("../../../../../source/img/user/rechargeBox0.png") no-repeat;
+        background-size: cover;
+        &:nth-child(2n+1) {
+          float: left;
+        }
+        &:nth-child(2n+2) {
+          float: right;
+        }
+        & p:first-child {
+          margin-top: 20px;
+        }
+      }
+    }
+    & .list1 .active {
+      background: url("../../../../../source/img/user/rechargeBox1.png") no-repeat;
+      background-size: cover;
+      color: #00aeec;
+    }
+    & .list2 .active {
+      background: url("../../../../../source/img/user/rechargeBox2.png") no-repeat;
+      background-size: cover;
+      color: #8ec31f;
+    }
+    & .inputPrice {
+      display: block;
+      width: 308px;
+      font-size: 28px; /*px*/
+      border: 2px solid #2d2d34; /*px*/
+      padding: 26px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+  & .card2 {
+    & p {
+      font-size: 28px; /*px*/
+      border-bottom: 2px solid #efefef; /*px*/
+      padding-left: 80px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background: #fff;
+    }
+    & input {
+      font-size: 24px; /*px*/
+      margin-left: 20px;
+      border: 0;
+    }
+  }
+
+  & input[type="button"] {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border: 0;
+    color: #fff;
+    background: #f8b62c;
+    padding: 28px 0;
+  }
+}

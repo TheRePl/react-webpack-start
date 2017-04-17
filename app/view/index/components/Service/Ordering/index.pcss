@@ -1,0 +1,84 @@
+.Ordering {
+
+  & ul {
+    margin-left: 110px;
+    margin-top: 30px;
+    & small {
+      color: #9B9B9B;
+    }
+    & p {
+      position: relative;
+      padding: 6px 0;
+    }
+    & .items {
+      text-align: center;
+    }
+    & .rt {
+      padding-right: 70px;
+    }
+    & li {
+      position: relative;
+      border-bottom: 2px solid #9B9B9B; /*px*/
+      padding-bottom: 20px;
+      margin-bottom: 14px;
+      & img {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 10px;
+        left: -70px;
+      }
+    }
+    & a {
+      display: block;
+      & span {
+        position: absolute;
+        top: 0;
+        right: 5%;
+        font-size: 36px;
+        margin-right: 10%;
+      }
+    }
+  }
+
+  & .orderItems {
+    border-bottom: 2px dashed #9B9B9B !important;
+  }
+
+  & big {
+    display: block;
+    text-align: right;
+    padding-right: 70px; /*pc*/
+    font-weight: 600;
+    & span {
+      color: #e60012;
+    }
+  }
+
+  & textarea {
+    width: 90%;
+    margin-top: 20px;
+    color: #2d2d34;
+    padding: 10px;
+    resize: none;
+  }
+
+  & .submit {
+    height: 90px; /*px*/
+    overflow: hidden;
+    & input {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 90px; /*px*/
+      line-height: 90px; /*px*/
+      border: 0;
+      font-size: 1.3em;
+      color: #fff;
+      background: #f8b62c;
+      z-index: 100;
+    }
+
+  }
+}

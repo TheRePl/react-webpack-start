@@ -79,10 +79,12 @@ sub {
   bottom: -.25em
 }
 
-a:hover {
-  text-decoration: underline
-}
-
 ins, a {
   text-decoration: none
 }
+input[type="button"], input[type="submit"], input[type="reset"] {
+
+  -webkit-appearance: none;
+
+}
+textarea {  -webkit-appearance: none;}

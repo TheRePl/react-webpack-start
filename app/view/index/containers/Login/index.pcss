@@ -1,0 +1,115 @@
+/**
+* @ Login
+**/
+.Login {
+  min-height: 100vh;
+}
+
+.employeeLogin {
+  & li {
+    box-sizing: border-box;
+    position: relative;
+    width: calc(100% / 3);
+    height: 250px;
+    float: left;
+    border-bottom: 2px solid #eee; /*px*/
+    border-right: 2px solid #eee; /*px*/
+    &:nth-child(3n) {
+      border-right-width: 0 !important;
+    }
+    & p {
+      position: absolute;
+      width: 100%;
+      bottom: 45px;
+      text-align: center;
+    }
+  }
+
+  & img {
+    position: absolute;
+    top: 30px;
+    left: 65px;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.register {
+  min-height: calc(100vh - 100px); /*px*/
+  position: relative;
+  background: url("../../../../source/img/login/9.jpg") no-repeat;
+  background-size: cover;
+
+  & form {
+    position: absolute;
+    padding: 0 300px 120px 300px;
+    top: 455px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    & input[type="text"] {
+      box-sizing: border-box;
+      width: 478px;
+      height: 65px;
+      padding: 18px 75px;
+      border-width: 0;
+      background: rgba(000, 000, 000, 0);
+    }
+
+    & > input[type="button"] {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px;
+      height: 88px;
+      border-width: 0;
+      background: url("../../../../source/img/login/16.png") no-repeat;
+      background-size: contain;
+    }
+    /* 输入框 */
+    & div {
+      position: relative;
+      margin-top: 24px;
+      background-size: contain !important;
+      & input[type="button"] {
+        position: absolute;
+        top: -2px; /*px*/
+        bottom: 0;
+        right: -2px; /*px*/
+        width: 160px;
+        border-width: 0;
+        border-radius: 30px;
+        font-size: 26px; /*px*/
+        background: #8ec31f;
+        color: #e5f0cc;
+      }
+      &:nth-child(1) {
+        height: 100px;
+        background: url("../../../../source/img/login/10.png") no-repeat;
+        & input {
+          margin-top: 37px;
+        }
+      }
+      &:nth-child(2) {
+        background: url("../../../../source/img/login/11.png") no-repeat;
+      }
+      &:nth-child(3) {
+        background: url("../../../../source/img/login/12.png") no-repeat;
+      }
+    }
+    /* 单选按钮 */
+    & ul {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 17px;
+      margin-bottom: 65px;
+      & input[type="radio"] {
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+.selected {
+  color: red;
+}

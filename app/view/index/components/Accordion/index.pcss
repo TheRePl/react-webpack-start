@@ -1,0 +1,62 @@
+._accordion {
+  width: 100%;
+  background: #FFF;
+  border-radius: 4px;
+  & .title {
+    position: relative;
+    display: block;
+    padding: 30px 30px 30px 80px;/*px*/
+    border-bottom: 2px solid #CCC; /*px*/
+    font-size: 28px; /*px*/
+    color: #0D0D0D;
+    cursor: pointer;
+
+    & span {
+      font-size: 30px; /*px*/
+      float: right;
+      color: #9B9B9B;
+      transition: transform 0.4s ease;
+    }
+  }
+
+  & .submenu {
+    background: #fff;
+    & a {
+      display: block;
+      text-decoration: none;
+      color: #d9d9d9;
+      padding: 20px 20px 20px 40px;/*px*/
+      transition: all 0.35s ease;
+      &:hover {
+        background: #eee;
+      }
+    }
+    /* 子条目 */
+    & li {
+      box-sizing: border-box;
+      border-bottom: 0;
+      height: 0;
+      overflow: hidden;
+      & a {
+        color: #2d2d34;
+      }
+    }
+  }
+
+  &[name='open'] {
+    & .title {
+      border-bottom: 2px solid #ccc !important; /*px*/
+      height: auto;
+      & span {
+        transform: rotate(90deg);
+      }
+    }
+
+    & .submenu {
+      & li {
+        border-bottom: 2px solid #ccc; /*px*/
+        height: auto;
+      }
+    }
+  }
+}

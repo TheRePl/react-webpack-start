@@ -1,0 +1,79 @@
+#home {
+  min-height: calc(100vh - 90px); /*px*/
+  background: #efefef;
+
+  & .header {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: url("../../../../../source/img/user/1.jpg") no-repeat;
+    background-size: cover;
+    & .box{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      & img{
+        width: 214px;
+        height: 214px;
+        border-radius: 50%;
+      }
+      & p{
+        padding: 20px 0;
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+
+  & .menu{
+    display: flex;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+    height: 150px;
+    margin-bottom: 20px;
+    background: #fff;
+    & h2{
+      font-size: 32px;/*px*/
+      text-align: center;
+      padding-top: 40px;
+    }
+    & p{
+      padding-top: 6px;
+      font-size: 28px;/*px*/
+      text-align: center;
+      color: #9B9B9B;
+    }
+    & img{
+      width: 44px;
+    }
+  }
+
+}
+
+#accordion{
+  & > div{
+    position: relative;
+    &::before{
+      position: absolute;
+      left: 30px;
+      top: 30px;
+      display: block;
+      width: 40px;/*px*/
+      height: 40px;/*px*/
+      content: '';
+    }
+    &:nth-child(1)::before{
+      background: url("../../../../../source/img/user/3.png") no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(2)::before{
+      background: url("../../../../../source/img/user/4.png") no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(3)::before{
+      background: url("../../../../../source/img/user/5.png") no-repeat;
+      background-size: cover;
+    }
+  }
+}

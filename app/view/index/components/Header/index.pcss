@@ -1,0 +1,34 @@
+#header {
+  height: 90px; /*px*/
+  border: 0;
+  & p {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px; /*px*/
+    line-height: 90px; /*px*/
+    text-align: center;
+    font-size: 32px; /*px*/
+    letter-spacing: 6px; /*px*/
+    color: #eee;
+    background-color: #3f3b3a;
+    z-index: 90;
+    & a {
+      position: absolute;
+      font-size: 40px; /*px*/
+      left: 40px;
+      color: #eee;
+    }
+  }
+}
+
+.headerWhite {
+  color: #3f3b3a !important;
+  border-bottom: 2px solid #eee; /*px*/
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff !important;;
+  & a {
+    color: #3f3b3a !important;
+  }
+}

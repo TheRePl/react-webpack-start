@@ -1,0 +1,35 @@
+#recordRecharge {
+  height: calc(100vh - 90px); /*px*/
+  background-color: #efefef;
+  & .header {
+    & li {
+      float: left;
+      width: 50%;
+      margin-bottom: 20px;
+      text-align: center;
+      background: #fff;
+      & a {
+        display: block;
+        width: 100%;
+        border-bottom: 4px solid #fff;
+        padding: 20px 0;
+      }
+    }
+    & .active {
+      border-bottom: 4px solid #f7ae00;
+      color: #f7ae00;
+    }
+  }
+  & .list{
+    & li {
+      background: #fff;
+      border: 2px solid #efefef;
+      padding: 20px 30px;
+    }
+    & p{
+      & span{
+        float: right;
+      }
+    }
+  }
+}

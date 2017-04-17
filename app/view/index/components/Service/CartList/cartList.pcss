@@ -1,0 +1,72 @@
+.cartList {
+  padding: 90px 0;
+  & .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    border-bottom: 2px solid #eee; /*px*/
+    background-color: #fff;
+    & h1 {
+      height: 100%;
+      line-height: 90px; /*px*/
+      font-size: 28px; /*px*/
+      text-align: center;
+    }
+  }
+  & .clearAll {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
+    color: #ecd139;
+  }
+  & .back {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+  }
+  & li {
+    width: 70%;
+    border-bottom: 2px solid #000; /*px*/
+    padding-bottom: 20px;
+    margin: 20px auto;
+    & img {
+      width: 184px;
+      height: 124px;
+    }
+    & div {
+      float: right;
+    }
+    & .title{
+      width: 38%;
+      margin-top: 30px;
+      & strong{
+        margin-left: 20px;
+        font-size: 28px;/*px*/
+        font-weight: 400;
+        color: red;
+      }
+    }
+    & .buyNum {
+      width: 138px;
+      height: 46px;
+      margin-top: 30px;
+      background: url("../../../../../source/img/service/buyNum.png") no-repeat;
+      background-size: cover;
+      & a, & span {
+        display: block;
+        float: left;
+        width: calc(100% / 3);
+        text-align: center;
+      }
+      & a {
+        font-size: 28px;
+        color: #ecd139;
+      }
+    }
+
+  }
+}

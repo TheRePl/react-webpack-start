@@ -20,6 +20,7 @@ const vendors = [
   'redux',
   'redux-actions',
   'redux-observable',
+  'redux-auth-wrapper',
   'rxjs',
 ];
 

@@ -2,8 +2,9 @@
  * 补丁
  **/
 import 'es6-promise/auto';
-// mport './tools/fetch';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
+injectTapEventPlugin();
 /* require.ensure([], function(require) {
   require("./module");
 }, "name"); */

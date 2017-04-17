@@ -1,0 +1,68 @@
+import React from 'react';
+import { Route } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Home from '../components/User/Home';
+import Recharge from '../components/User/Recharge';
+import RecordRecharge from '../components/User/RecordRecharge';
+import Record from '../components/User/Record';
+import Introduce from '../components/User/Introduce';
+import Address from '../components/User/Address';
+import AddAddress from '../components/User/AddAddress';
+
+function User() {
+  return (
+    <div>
+      <Route
+        path={'/user/home'}
+        render={() => (
+          <div>
+            <Header title="我的" href={'/'} />
+            <Home />
+            <Footer />
+          </div>
+        )}
+      />
+      <Route
+        path={'/user/recharge'}
+        render={() => (
+          <div>
+            <Header title="我要充值" href="/" />
+            <Recharge />
+          </div>
+        )}
+      />
+      <Route
+        path={'/user/introduce/:path'}
+        render={() => (
+          <div>
+            <Header title="用户协议" href="/user/home" white />
+            <Introduce />
+          </div>
+        )}
+      />
+      <Route
+        path={'/user/record/:path'}
+        render={() => (
+          <div>
+            <Header title="消费记录" href="/user/home" white />
+            <Record />
+          </div>
+        )}
+      />
+      <Route
+        path={'/user/recordRecharge'}
+        render={() => (
+          <div>
+            <Header title="充值记录" href="/user/home" white />
+            <RecordRecharge />
+          </div>
+        )}
+      />
+      <Route path={'/user/address'} component={Address} />
+      <Route path={'/user/addAddress'} component={AddAddress} />
+    </div>
+  );
+}
+
+export default User;

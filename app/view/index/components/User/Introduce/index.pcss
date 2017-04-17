@@ -1,0 +1,29 @@
+#introduce {
+
+  & .header {
+    & li {
+      float: left;
+      width: calc(100% / 3);
+      text-align: center;
+      background: #fff;
+      & a {
+        display: block;
+        width: 100%;
+        border-bottom: 4px solid #eee;
+        padding: 20px 0;
+      }
+    }
+    & .active {
+      border-bottom: 4px solid #f7ae00;
+      color: #f7ae00;
+    }
+  }
+
+  & .textContent {
+    padding: 30px;
+    & h2 {
+      color: #f7ae00;
+      padding: 10px 0;
+    }
+  }
+}

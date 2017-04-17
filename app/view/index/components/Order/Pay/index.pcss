@@ -1,0 +1,61 @@
+#pay {
+  position: relative;
+  min-height: calc(100vh - 90px); /*px*/
+  background-color: #efefef;
+  & ul {
+    & li {
+      padding: 20px 36px;
+      border-bottom: 2px solid #B2B2B2;
+      color: #B2B2B2;
+      background-color: #fff;
+      &:last-child {
+        border: 0;
+      }
+      & span {
+        color: #0D0D0D;
+        float: right;
+      }
+    }
+  }
+  & .pay {
+    margin-bottom: 20px;
+    & li {
+      color: #0D0D0D;
+    }
+    & .red {
+      position: relative;
+      top: -10px;
+      color: #fff;
+      background: #e60012;
+      padding: 10px 24px;
+    }
+    & .active {
+      color: #f8b62c;
+    }
+  }
+  & .card {
+    padding: 20px 36px;
+    margin: 24px 0;
+    background: #fff;
+    & a {
+      float: right;
+      color: #f8b62c;
+    }
+  }
+  & > p {
+    color: #9B9B9B;
+    letter-spacing: 4px;
+    padding: 6px 10px;
+  }
+  & input {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 0;
+    width: 100%;
+    height: 90px;/*px*/
+    border: 0;
+    color: #fff;
+    background: #f8b62c;
+  }
+}

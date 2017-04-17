@@ -22,8 +22,8 @@ const vendorsJson = files.dllPath + '/vendors.json';
 module.exports = [
 
   new webpack.LoaderOptionsPlugin({
-    minimize: true,
-    debug: false,
+    // minimize: true,
+    // debug: false,
     options: {
       context: files.appPath,
       postcss: [
