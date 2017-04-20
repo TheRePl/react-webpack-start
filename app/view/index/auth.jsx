@@ -7,7 +7,7 @@ export const UserIsAuthenticated = UserAuthWrapper({
   wrapperDisplayName: 'UserIsAuthenticated', // 组件名称，react-Devtools调试
   authSelector: state => state.data, // 确切的数据将被当作props传递给组件
   authenticatingSelector: state => state.isLogin, // store 这个数据项
-  failureRedirectPath: '/toLogin',
+  failureRedirectPath: '/login',
   LoadingComponent: Loader, // 组件项，当 authenticatingSelector： true时启动
 });
 

@@ -1,33 +1,35 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { SELECT_CARD } from '../../../actions';
 import cardImg from '../../../../../source/img/order/card.png';
 
 const cardList = [
   {
     type: '洗衣',
-    price: '30',
+    price: '20',
     startTime: '2017-04-11',
     endTime: '2017-06-11',
     address: '余姚',
     free: false,
-    key: 0
+    key: 0,
   },
   {
     type: '洗衣',
-    price: '30',
+    price: '10',
     startTime: '2017-04-11',
     endTime: '2017-06-11',
     address: '余姚',
     free: true,
-    key: 1
+    key: 1,
   },
   {
     type: '保洁',
-    price: '30',
+    price: '40',
     startTime: '2017-04-11',
     endTime: '2017-06-11',
     address: '余姚',
     free: false,
-    key: 2
+    key: 2,
   },
   {
     type: '保洁',
@@ -36,7 +38,7 @@ const cardList = [
     endTime: '2017-06-11',
     address: '余姚',
     free: true,
-    key: 3
+    key: 3,
   },
   {
     type: '保洁',
@@ -45,11 +47,11 @@ const cardList = [
     endTime: '2017-06-11',
     address: '余姚',
     free: true,
-    key: 4
+    key: 4,
   },
 ];
 
-function Card() {
+function Card(props) {
   return (
     <ul id="payCard" className="clear">
       {
@@ -57,7 +59,14 @@ function Card() {
           /*
           * 卡卷是否选中状态
           * */
-          <li className="active" key={item.key}>
+          <li
+            className="active"
+            onTouchTap={() => {
+              props.SELECT_CARD(item.price);
+              props.history.goBack();
+            }}
+            key={item.key}
+          >
             <div>
               <img src={cardImg} alt="" />
               <div className="lt">
@@ -88,4 +97,10 @@ function Card() {
   );
 }
 
-export default Card;
+function mapStateToProps(state) {
+  console.log(state);
+  return state;
+}
+export default connect(mapStateToProps, {
+  SELECT_CARD,
+})(Card);

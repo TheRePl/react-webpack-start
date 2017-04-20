@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const orderDetails = {
-  type: '保洁',
+  type: '洗衣',
   id: '12312312312',
   time: '2017-04-11 12:00-13:00',
   price: '49',
@@ -33,39 +33,22 @@ const address = {
 function Details() {
   return (
     <div id="details">
-      <p className="header more">
-        <span>
-          待确认
-        </span>
-        <span className="active">
-          取件中
-        </span>
-        <span>
-          洗护中
-        </span>
-        <span>
-          派送中
-        </span>
-        <span>
-          已完成
-        </span>
-      </p>
-
-      <p className="header less">
-        <span>
-          待确认
-        </span>
-        <span className="active">
-          上门中
-        </span>
-        <span>
-          服务中
-        </span>
-        <span>
-          已完成
-        </span>
-      </p>
-
+      {
+        orderDetails.type === '洗衣' ?
+          <p className="header more">
+            <span>待确认</span>
+            <span className="active">取件中</span>
+            <span>洗护中</span>
+            <span>派送中</span>
+            <span>已完成</span>
+          </p> :
+          <p className="header less">
+            <span>待确认</span>
+            <span className="active">上门中</span>
+            <span>服务中</span>
+            <span>已完成</span>
+          </p>
+      }
       <div className="details">
         <p>订单详情</p>
         {
@@ -131,7 +114,7 @@ function Details() {
       </div>
 
       <div className="footer clear">
-        <Link to={'/'}>
+        <Link to={'/order/pay'}>
           支付订单
         </Link>
       </div>

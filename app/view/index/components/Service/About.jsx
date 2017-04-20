@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import about from '../../../../source/img/service/about.jpg';
+import about from '../../../../source/img/service/clearing/about.jpg';
 
 /*
 const groups = [
@@ -29,14 +29,14 @@ function About() {
   return (
     <div>
       <img src={about} alt="" width="100%" />
-      <Link to={'/service/select'}>
+      <Link to={'/service'}>
         <input
           type="button"
           value="下一步"
           style={{
             width: '100%',
             fontSize: '1.5em',
-            padding: '10px 0',
+            padding: '20px 0',
             color: '#fff',
             border: 0,
             background: '#f8b62c',

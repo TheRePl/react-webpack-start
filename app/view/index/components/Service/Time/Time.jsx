@@ -18,8 +18,8 @@ function Time() {
       <div className="coverTime">&nbsp;</div>
       <div className="selectTime">
         <p>
-          <Link to={'/'}>取消</Link>
-          <Link className="success rt" to={'/'}>完成</Link>
+          <Link to={'/service/ordering'}>取消</Link>
+          <Link className="success rt" to={'/service/ordering'}>完成</Link>
         </p>
         <ul className="clear">
           <li className="action">

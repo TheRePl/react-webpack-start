@@ -15,13 +15,13 @@ const items = [
 function Ordering() {
   return (
     <div className="Ordering">
-      <Header title="订单确认" href={'/service/select'} white />
+      <Header title="订单确认" href={'/service'} white />
       <ul>
         <li>
           <img src={img0} alt="" />
           <small>服务地址：</small>
           <p>
-            <Link to={'/'}>
+            <Link to={'/service/address'}>
               还没有设置地址哟
               <span>&gt;</span>
             </Link>
@@ -69,7 +69,7 @@ function Ordering() {
           <img src={img2} alt="" />
           <small>服务时间：</small>
           <p>
-            <Link to={'/'}>
+            <Link to={'/service/ordering/time'}>
               请选择服务时间
               <span>&gt;</span>
             </Link>

@@ -2,10 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
-import './index.pcss';
-import Header from '../../components/Header';
-import EmployeeLogin from '../../components/Login/EmployeeLogin';
-import Register from '../../components/Login/Register';
+import Header from '../components/Header';
+import { EmployeeLogin, Register } from '../components/Login';
 
 function Login({ match }) {
   const path = match.params.path;

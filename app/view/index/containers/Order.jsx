@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import List from '../components/Order/List';
@@ -11,17 +11,7 @@ import Card from '../components/Order/Card';
 
 function Order({ match }) {
   return (
-    <div>
-      <Route
-        exact
-        path={match.url}
-        render={() => (
-          <div>
-            <Header title="订单列表" />
-            <Route component={List} />
-          </div>
-        )}
-      />
+    <Switch>
       <Route
         exact
         path={`${match.url}/details`}
@@ -54,16 +44,26 @@ function Order({ match }) {
       />
       <Route
         exact
-        path={`${match.url}/card`}
-        render={() => (
+        path={`${match.url}/pay/card`}
+        render={({ history }) => (
           <div>
-            <Header href={'/'} title="我的卷" />
-            <Card />
+            <Header href={`${match.url}/pay`} title="我的卷" />
+            <Card history={history} />
             <Footer />
           </div>
         )}
       />
-    </div>
+      <Route
+        path={`${match.url}`}
+        render={() => (
+          <div>
+            <Header title="订单列表" />
+            <Route component={List} />
+            <Footer />
+          </div>
+        )}
+      />
+    </Switch>
   );
 }
 

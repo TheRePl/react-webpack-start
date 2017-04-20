@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Route, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Slider from '../components/Service/Slider';
@@ -12,15 +13,18 @@ import CartList from '../components/Service/CartList';
 import SelectArea from '../components/Service/SelectArea';
 import Ordering from '../components/Service/Ordering';
 import Time from '../components/Service/Time';
+import Address from '../components/Service/Address';
+import AddAddress from '../components/Service/AddAddress';
 
-function Service() {
+function Service({ location }) {
   return (
     <div>
       <Route
-        path={'/service/index'}
+        exact
+        path={'/'}
         render={() => (
           <div>
-            <Link className="selectAreaIcon" to={'/service/selectArea'} />
+            <Link className="selectAreaIcon" to={'/selectArea'} />
             <Slider />
             <Menus />
             <IndexItems />
@@ -29,20 +33,22 @@ function Service() {
         )}
       />
       <Route
-        path={'/service/selectArea'}
+        exact
+        path={'/selectArea'}
         render={() => (
           <div>
-            <Header title="地域选择" href={'/service/index'} />
+            <Header title="地域选择" href={'/'} />
             <SelectArea />
           </div>
         )}
       />
       <Route
-        path={'/service/select'}
+        exact
+        path={'/service'}
         render={() => (
           <div style={{ background: '#eee', minHeight: '100vh' }}>
-            <Header title="服务选择" white href={'/service/index'} />
-            <Items />
+            <Header title="服务选择" white href={'/'} />
+            <Items location={location} />
             <SelectServiceFooter />
           </div>
         )}
@@ -51,7 +57,7 @@ function Service() {
         path={'/service/about'}
         render={() => (
           <div>
-            <Header title="服务介绍" white href={'/service/select'} />
+            <Header title="服务介绍" white href={'/service'} />
             <About />
           </div>
         )}
@@ -60,7 +66,7 @@ function Service() {
         path={'/service/cartList'}
         render={() => (
           <div>
-            <CartList />
+            <CartList location={location} />
             <SelectServiceFooter />
           </div>
         )}
@@ -77,8 +83,23 @@ function Service() {
           </div>
         )}
       />
+      <Route
+        path={'/service/address'}
+        component={Address}
+      />
+      <Route
+        path={'/service/addAddress'}
+        component={AddAddress}
+      />
     </div>
   );
 }
+
+Service.defaultProps = {
+  location: {},
+};
+Service.propTypes = {
+  location: PropTypes.object,
+};
 
 export default Service;

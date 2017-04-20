@@ -1,0 +1,80 @@
+#payCard {
+  min-height: calc(100vh - 160px); /*px*/
+  padding-bottom: 70px;
+  background: #efefef;
+  & img {
+    width: 100%;
+  }
+  & .lt {
+    position: absolute;
+    left: 4%;
+    top: 44px;
+    font-size: 70px; /*px*/
+    color: #e60012;
+    & span {
+      font-size: 40px;
+    }
+  }
+  & .rt {
+    position: absolute;
+    left: 35%;
+    top: 20px;
+    font-size: 20px; /*px*/
+    padding-right: 10px;
+    & h2 {
+      font-size: 40px; /*px*/
+      font-weight: 600;
+      color: #595757;
+      & small {
+        font-size: 20px; /*px*/
+        color: #B2B2B2;
+        font-weight: 400;
+      }
+      & span {
+        font-size: 24px; /*px*/
+        padding: 4px 10px;
+        margin-left: 10px;
+        color: #fff;
+        background: #5db85e;
+      }
+    }
+  }
+  & .active {
+    &::before {
+      border: 2px solid #e60012;
+      background: #e60012;
+    }
+  }
+  /* 第一层核心*/
+  & > li {
+    position: relative;
+    cursor: pointer;
+    margin: 20px 20px 20px 40px;
+    padding-left: 20px;
+    &:first-child{
+      padding-top: 20px;
+      margin-top: 0;
+    }
+    &::before {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: -20px; /*px*/
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid #B2B2B2;
+      background: #fff;
+    }
+    & > p {
+      position: absolute;
+      left: 40px;
+      bottom: 20px;
+    }
+    & > div {
+      position: relative;
+    }
+  }
+}

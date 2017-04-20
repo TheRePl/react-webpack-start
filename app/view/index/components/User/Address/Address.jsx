@@ -13,8 +13,8 @@ function Address() {
   return (
     <div className="address">
       <div className="addAddress">
-        <Header title={'选择地址'} href={'/service/ordering'} white />
-        <Link to={'/'}>新添地址</Link>
+        <Header title={'选择地址'} href={'/user'} white />
+        <Link to={'/user/addAddress'}>新添地址</Link>
       </div>
       <div className="addressList">
         {/* 判断是否有地址，让div占据真个div覆盖背景 */}

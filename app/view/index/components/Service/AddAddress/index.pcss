@@ -1,0 +1,74 @@
+#addAddress {
+  height: 100vh;
+  background: #efefef;
+  & .header {
+    height: 90px; /*px*/
+    line-height: 50px; /*px*/
+    background: #3f3b3a;
+    color: #fff;
+    & a {
+      position: relative;
+      top: 20px; /*px*/
+      float: left;
+      font-size: 30px;
+      padding: 0 40px;
+      border-right: 2px solid #0D0D0D; /*px*/
+      color: #fff;
+    }
+    & h1 {
+      position: relative;
+      top: 20px; /*px*/
+      font-size: 32px; /*px*/
+      margin-left: 160px;
+    }
+  }
+  & p {
+    margin: 10px 8px;
+  }
+  & li {
+    position: relative;
+    height: 80px; /*px*/
+    line-height: 80px; /*px*/
+    background: #fff;
+    border-top: 2px solid #eee;
+    &::before {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      display: block;
+      content: '';
+      width: 40px;
+      height: 40px;
+    }
+    & input {
+      width: 100%;
+      padding: 20px;
+      margin-left: 10%;
+      border: 0;
+    }
+
+    &:nth-child(1)::before {
+      background: url("../../../../../source/img/user/userName.png") no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(2)::before {
+      background: url("../../../../../source/img/user/userPhone.png") no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(3)::before {
+      background: url("../../../../../source/img/user/userMap.png") no-repeat;
+      background-size: cover;
+    }
+  }
+  & input[type="button"] {
+    position: fixed;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    border: 0;
+    font-size: 1.2em;
+    color: #fff;
+    background: #f8b62c;
+  }
+}

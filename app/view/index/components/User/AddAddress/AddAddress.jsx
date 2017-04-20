@@ -5,7 +5,7 @@ function AddAddress() {
   return (
     <div id="addAddress">
       <div className="header">
-        <Link to={'/'}>X</Link>
+        <Link to={'/user'}>X</Link>
         <h1>添加地址</h1>
       </div>
       <p>
@@ -22,7 +22,7 @@ function AddAddress() {
           <input type="text" placeholder="详细地址(如余姚市xx街道xx号xx小区xx幢xx楼xx号)" />
         </li>
       </ul>
-      <input type="button" value="确认" />
+      <Link to={'/user/address'} >确认</Link>
     </div>
   );
 }

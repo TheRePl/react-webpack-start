@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Success() {
   return (
@@ -9,7 +10,7 @@ function Success() {
           <p>感谢对搭把手的支持</p>
         </h1>
       </div>
-      <input type="button" value="查看订单记录" />
+      <Link to="/order/ed">查看订单记录</Link>
     </div>
   );
 }

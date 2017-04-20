@@ -35,6 +35,7 @@ rules:
   quotes:
     - error
     - single
+  react/no-unused-prop-types: off # 是否存在未使用的props
   react/jsx-uses-vars: warn
   react/forbid-prop-types: off
   jsx-a11y/no-static-element-interactions: off
