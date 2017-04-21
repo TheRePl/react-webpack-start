@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Header from '../../Header';
 import img0 from '../../../../../source/img/service/address.png';
@@ -9,19 +10,19 @@ const items = [
   { name: '日常保洁（3小时/次）', num: 2, price: 100, key: 0 },
   { name: '日常保洁（3小时/次）', num: 1, price: 140, key: 1 },
   { name: '日常保洁（3小时/次）', num: 4, price: 120, key: 2 },
-  { name: '日常保洁（3小时/次）', num: 2, price: 100, key: 3 },
+  { name: '日常保洁（3小时/次）', num: 2, price: 100, key: 3 }
 ];
 
-function Ordering() {
+function Ordering({ location }) {
   return (
     <div className="Ordering">
-      <Header title="订单确认" href={'/service'} white />
+      <Header title="订单确认" href={`/service${location.hash}`} white />
       <ul>
         <li>
           <img src={img0} alt="" />
           <small>服务地址：</small>
           <p>
-            <Link to={'/service/address'}>
+            <Link to={`/service/address${location.hash}`}>
               还没有设置地址哟
               <span>&gt;</span>
             </Link>
@@ -69,7 +70,7 @@ function Ordering() {
           <img src={img2} alt="" />
           <small>服务时间：</small>
           <p>
-            <Link to={'/service/ordering/time'}>
+            <Link to={`/service/ordering/time${location.hash}`}>
               请选择服务时间
               <span>&gt;</span>
             </Link>
@@ -83,4 +84,10 @@ function Ordering() {
   );
 }
 
+Ordering.defaultProps = {
+  location: {}
+};
+Ordering.propTypes = {
+  location: PropTypes.object
+};
 export default Ordering;

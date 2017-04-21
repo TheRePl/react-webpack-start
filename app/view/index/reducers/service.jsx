@@ -8,7 +8,7 @@ import {
   REDUCE_SERVICE_COUNT,
 } from '../actions';
 
-const order = createReducer([], {
+const $$order = createReducer([], {
   [ADD_SERVICE](state, action) {
     let off = true;
     state.map(item => {
@@ -43,6 +43,6 @@ const service = createReducer([], {
 });
 
 export default {
-  order,
+  $$order,
   service,
 };

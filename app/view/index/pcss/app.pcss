@@ -1,0 +1,209 @@
+html, body {
+  height: 100%;
+  background: #efefef;
+}
+
+#root, #app {
+  position: relative;
+  width: 750px;
+  overflow-x: hidden;
+  height: 100%;
+  background-color: #efefef;
+  margin: 0 auto;
+}
+
+#box{
+  min-height: 100vh;
+  background: #fff;
+}
+
+#footer {
+  height: 70px; /*px*/
+  background-color: rgba(0, 0, 0, 0);
+  & ul {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 70px; /*px*/
+    line-height: 70px; /*px*/
+    border-top: 2px solid #eee; /*px*/
+    background-color: #fff;
+  }
+  & li {
+    box-sizing: border-box;
+    width: 25%;
+    float: left;
+    text-align: center;
+    & .active {
+      color: #f8b62c;
+    }
+  }
+  & a::before {
+    display: inline-block;
+    position: relative;
+    top: 4px; /*px*/
+    width: 30px; /*px*/
+    height: 30px; /*px*/
+    margin-right: 6px;
+    content: '';
+  }
+  & .linkIndex {
+    & a::before {
+      background: url("../../../source/img/footer/index.png") no-repeat;
+      background-size: cover;
+    }
+    & .active::before {
+      background: url("../../../source/img/footer/indexActive.png") no-repeat;
+      background-size: cover;
+    }
+  }
+  & .linkOrder {
+    & a::before {
+      background: url("../../../source/img/footer/order.png") no-repeat;
+      background-size: cover;
+    }
+    & .active::before {
+      background: url("../../../source/img/footer/orderActive.png") no-repeat;
+      background-size: cover;
+    }
+  }
+  & .linkRecharge {
+    & a::before {
+      background: url("../../../source/img/footer/recharge.png") no-repeat;
+      background-size: cover;
+    }
+    & .active::before {
+      background: url("../../../source/img/footer/rechargeActive.png") no-repeat;
+      background-size: cover;
+    }
+  }
+  & .linkHome {
+    & a::before {
+      background: url("../../../source/img/footer/home.png") no-repeat;
+      background-size: cover;
+    }
+    & .active::before {
+      background: url("../../../source/img/footer/homeActive.png") no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+.selectAreaIcon {
+  position: absolute;
+  z-index: 100;
+  top: 20px;
+  left: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url("../../../source/img/service/selectArea.png") no-repeat;
+  background-size: cover;
+}
+
+#rootMenu {
+  width: 100%;
+  border-bottom: 2px solid #eee; /*px*/
+  padding-bottom: 20px;
+  background-color: #fff;
+  & li {
+    float: left;
+    width: 20%;
+    text-align: center;
+    & img {
+      width: 50px;
+      margin: 15px 0;
+    }
+  }
+}
+
+/* 服务列表 */
+.serviceItem {
+  padding: 15px;
+  /* 顶层图片 */
+  & .banner {
+    width: 100%;
+    height: 220px;
+  }
+  & .textContent {
+    padding: 0 10px;
+  }
+  & .about {
+    display: block;
+  }
+  & li {
+    position: relative;
+    box-sizing: border-box;
+    float: left;
+    width: 49%;
+    margin-top: 15px;
+    padding: 10px;
+    border: 2px solid #c6c7c8; /*px*/
+    background: #fff;
+    &:nth-child(2n) {
+      margin-left: 2%;
+    }
+    & h2 {
+      font-size: 28px; /*px*/
+      padding: 10px 0;
+    }
+    & img {
+      width: 100%;
+      height: 235px;
+    }
+    & p {
+      color: #8a8a8a;
+    }
+    & strong {
+      font-size: 28px; /*px*/
+      color: #e60012;
+      font-weight: 400;
+    }
+    /* 购物车 */
+    & .textContent a {
+      position: absolute;
+      right: 25px;
+      bottom: 25px;
+      display: block;
+      width: 65px;
+      height: 65px;
+      background: url("../../../source/img/service/shopCart.png") no-repeat;
+      background-size: cover;
+      & span {
+        position: absolute;
+        right: -6px; /*px*/
+        top: -10px; /*px*/
+        display: block;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        font-size: 20px; /*px*/
+        text-align: center;
+        line-height: 24px; /*px*/
+        background: #e60012;
+        color: #fff;
+        opacity: 0;
+      }
+    }
+    /* 添加选购的购物车 */
+    & .active {
+      background: url("../../../source/img/service/shopingCart.png") no-repeat;
+      background-size: cover;
+      & span {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* 地区选择 */
+#selectArea {
+  background-color: #fff;
+  & li {
+    font-size: 28px; /*px*/
+    border-bottom: 2px solid #eee; /*px*/
+    padding: 25px 40px;
+    cursor: pointer;
+  }
+}

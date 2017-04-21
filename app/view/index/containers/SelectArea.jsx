@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../components/Header';
 
 const areas = [
   { name: '宁波-余姚', key: 0 },
@@ -10,15 +11,18 @@ const areas = [
 
 function SelectArea() {
   return (
-    <ul id="selectArea">
-      {
-        areas.map(area => (
-          <li key={area.key}>
-            {area.name}
-          </li>
-        ))
-      }
-    </ul>
+    <div>
+      <Header title="地域选择" href={'/'} />
+      <ul id="selectArea">
+        {
+          areas.map(area => (
+            <li key={area.key}>
+              {area.name}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   );
 }
 

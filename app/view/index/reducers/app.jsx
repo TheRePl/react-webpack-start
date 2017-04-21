@@ -1,26 +1,18 @@
-// import { Map } from 'immutable';
+import { List } from 'immutable';
 import createReducer from './createReducer';
-import { TO_LOGIN, GET_USER } from '../actions';
+import { GET_ROOT_LIST } from '../actions';
 
-const isLogin = createReducer(false, {
-  [TO_LOGIN](state, action) {
-    /**
-     *  @路由传递
-     ***/
-    return action.payload;
-  },
-});
-
-const data = createReducer(null, {
-  [GET_USER](state, action) {
-    /**
-     *  @路由传递
-     ***/
-    return action.payload;
-  },
+const $$rootData = createReducer({
+  banner: '',
+  list: {}
+}, {
+  /* 获取首页展示页 */
+  [GET_ROOT_LIST](state, action) {
+    return state.updateIn(['list'], () => List(action.payload))
+      .updateIn(['banner'], () => action.banner);
+  }
 });
 
 export default {
-  isLogin,
-  data
+  $$rootData
 };

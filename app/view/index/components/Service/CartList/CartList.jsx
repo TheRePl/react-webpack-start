@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { CLEAR_SERVICE, ADD_SERVICE_COUNT, REDUCE_SERVICE_COUNT } from '../../../actions';
 
 function CartList(props) {
-  console.log(props);
   return (
     <div className="cartList">
       <div className="header">
@@ -17,11 +16,19 @@ function CartList(props) {
           清空
         </a>
         <h1>价格预估</h1>
-        <Link className="back" to={'/service'}>X</Link>
+        <Link
+          className="back"
+          to={{
+            pathname: '/service',
+            hash: props.location.hash
+          }}
+        >
+          X
+        </Link>
       </div>
       <ul>
         {
-          props.order.map(item => (
+          props.$$order.map(item => (
             <li key={item.get('id')}>
               <img src={item.get('img')} alt="" />
               <div className="buyNum">
@@ -42,26 +49,28 @@ function CartList(props) {
 }
 
 CartList.defaultProps = {
-  order: {},
+  $$order: {},
+  location: {},
   ADD_SERVICE_COUNT: () => false,
   REDUCE_SERVICE_COUNT: () => false,
-  CLEAR_SERVICE: () => false,
+  CLEAR_SERVICE: () => false
 };
 
 CartList.propTypes = {
-  order: ImmutableTypes.list,
+  $$order: ImmutableTypes.list,
+  location: PropTypes.object,
   ADD_SERVICE_COUNT: PropTypes.func,
   REDUCE_SERVICE_COUNT: PropTypes.func,
-  CLEAR_SERVICE: PropTypes.func,
+  CLEAR_SERVICE: PropTypes.func
 };
 
 function mapStateToProps(state) {
   return {
-    order: state.order,
+    $$order: state.$$order
   };
 }
 export default connect(mapStateToProps, {
   CLEAR_SERVICE,
   ADD_SERVICE_COUNT,
-  REDUCE_SERVICE_COUNT,
+  REDUCE_SERVICE_COUNT
 })(CartList);

@@ -1,6 +1,8 @@
 #recharge {
+  position: relative;
   min-height: calc(100vh - 90px); /*px*/
   background-color: #efefef;
+  padding-bottom: 60px;
   & .menu {
     height: 104px;
     line-height: 104px;
@@ -8,7 +10,7 @@
     & li {
       float: left;
       width: calc(100% / 3);
-      & a{
+      & a {
         display: block;
         border-bottom: 4px solid #efefef; /*px*/
         text-align: center;
@@ -145,10 +147,10 @@
   }
 
   & input[type="button"] {
-    position: fixed;
+    position: absolute;
     left: 0;
-    bottom: 0;
-    width: 100%;
+    bottom: -20px;
+    width:100%;
     border: 0;
     color: #fff;
     background: #f8b62c;

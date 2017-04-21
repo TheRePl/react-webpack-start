@@ -3,7 +3,6 @@ const files = require('./base/files');
 const path = require('path');
 const webpack = require('webpack');
 const Visualizer = require('webpack-visualizer-plugin');
-
 const vendors = [
   /**
    * babel-polyfill 支持到es5
@@ -11,8 +10,11 @@ const vendors = [
   'babel-polyfill',
 
   // 其他依赖
+  'history',
   'immutable',
+  'prop-types',
   'react',
+  'react-async-component',
   'react-dom',
   'react-redux',
   'react-router-dom',
@@ -20,7 +22,6 @@ const vendors = [
   'redux',
   'redux-actions',
   'redux-observable',
-  'redux-auth-wrapper',
   'rxjs',
 ];
 

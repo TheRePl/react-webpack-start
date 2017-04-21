@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function AddAddress() {
+function AddAddress({ location }) {
   return (
     <div id="addAddress">
       <div className="header">
-        <Link to={'/service/address'}>X</Link>
+        <Link to={`/service/address${location.hash}`}>X</Link>
         <h1>添加地址</h1>
       </div>
       <p>
@@ -27,4 +28,10 @@ function AddAddress() {
   );
 }
 
+AddAddress.defaultProps = {
+  location: {}
+};
+AddAddress.propTypes = {
+  location: PropTypes.object
+};
 export default AddAddress;

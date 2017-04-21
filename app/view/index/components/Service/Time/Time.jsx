@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const itemsTime = [
@@ -9,17 +10,17 @@ const itemsTime = [
   { time: '12:00-13:00', key: 4 },
   { time: '13:00-14:00', key: 5 },
   { time: '14:00-15:00', key: 6 },
-  { time: '15:00-16:00', key: 7 },
+  { time: '15:00-16:00', key: 7 }
 ];
 
-function Time() {
+function Time({ location }) {
   return (
     <div>
       <div className="coverTime">&nbsp;</div>
       <div className="selectTime">
         <p>
-          <Link to={'/service/ordering'}>取消</Link>
-          <Link className="success rt" to={'/service/ordering'}>完成</Link>
+          <Link to={`/service/ordering${location.hash}`}>取消</Link>
+          <Link className="success rt" to={`/service/ordering${location.hash}`}>完成</Link>
         </p>
         <ul className="clear">
           <li className="action">
@@ -52,4 +53,10 @@ function Time() {
   );
 }
 
+Time.defaultProps = {
+  location: {}
+};
+Time.propTypes = {
+  location: PropTypes.object
+};
 export default Time;

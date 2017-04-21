@@ -79,7 +79,6 @@
   },
   "homepage": "https://github.com/sayll/react-webpack-start#readme",
   "dependencies": {
-    "classnames": "^2.2.5",
     "es6-promise": "^4.1.0",
     "history": "^4.6.1",
     "immutable": "^4.0.0-rc.2",

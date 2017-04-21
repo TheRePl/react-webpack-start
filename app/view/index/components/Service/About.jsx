@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import about from '../../../../source/img/service/clearing/about.jpg';
 
@@ -25,21 +26,21 @@ const groups = [
 ];
 */
 
-function About() {
+function About({ location }) {
   return (
     <div>
       <img src={about} alt="" width="100%" />
-      <Link to={'/service'}>
+      <Link to={`/service${location.hash}`}>
         <input
           type="button"
           value="下一步"
           style={{
             width: '100%',
             fontSize: '1.5em',
-            padding: '20px 0',
+            padding: '.4em 0',
             color: '#fff',
             border: 0,
-            background: '#f8b62c',
+            background: '#f8b62c'
           }}
         />
       </Link>
@@ -78,4 +79,10 @@ function About() {
   );
 }
 
+About.defaultProps = {
+  location: {}
+};
+About.propTypes = {
+  location: PropTypes.object
+};
 export default About;

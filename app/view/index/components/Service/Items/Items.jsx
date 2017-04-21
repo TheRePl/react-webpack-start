@@ -10,7 +10,7 @@ class Items extends Component {
     return {
       service: immutableTypes.list,
       ADD_SERVICE: PropTypes.func.isRequired,
-      FETCH_SERVICE: PropTypes.func.isRequired,
+      FETCH_SERVICE: PropTypes.func.isRequired
     };
   }
 
@@ -25,13 +25,20 @@ class Items extends Component {
   }
 
   render() {
+    const props = this.props;
     return (
       <div className="serviceItem">
         <ul className="clear">
           {
             this.props.service.map(item => (
               <li key={item.id}>
-                <Link className="about" to={'/service/about'}>
+                <Link
+                  className="about"
+                  to={{
+                    pathname: '/service/about',
+                    hash: props.location.hash
+                  }}
+                >
                   <img src={item.img} alt="" />
                 </Link>
                 <div className="textContent">
@@ -45,7 +52,7 @@ class Items extends Component {
                       num: 1,
                       img: item.img,
                       price: item.price,
-                      id: item.id,
+                      id: item.id
                     })}
                     className="shopCart"
                   >
@@ -63,8 +70,8 @@ class Items extends Component {
 
 export default connect(state => ({
   order: state.order,
-  service: state.service,
+  service: state.service
 }), {
   ADD_SERVICE,
-  FETCH_SERVICE,
+  FETCH_SERVICE
 })(Items);
