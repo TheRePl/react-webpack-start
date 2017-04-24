@@ -1,15 +1,20 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Home from '../components/User/Home';
-import Card from '../components/User/Card';
-import Recharge from '../components/User/Recharge';
-import RecordRecharge from '../components/User/RecordRecharge';
-import Record from '../components/User/Record';
-import Introduce from '../components/User/Introduce';
-import Address from '../components/User/Address';
-import AddAddress from '../components/User/AddAddress';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Route } from 'react-router-dom'
+import { asyncComponent } from 'react-async-component'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import Home from '../components/User/Home'
+import Card from '../components/User/Card'
+import Recharge from '../components/User/Recharge'
+import RecordRecharge from '../components/User/RecordRecharge'
+import Record from '../components/User/Record'
+import Address from '../components/User/Address'
+import AddAddress from '../components/User/AddAddress'
+
+const Introduce = asyncComponent({
+  resolve: () => System.import('../components/User/Introduce')
+})
 
 function User({ match }) {
   return (
@@ -73,7 +78,13 @@ function User({ match }) {
       <Route path={'/user/address'} component={Address} />
       <Route path={'/user/addAddress'} component={AddAddress} />
     </div>
-  );
+  )
 }
 
-export default User;
+User.defaultProps = {
+  match: {}
+}
+User.propTypes = {
+  match: PropTypes.object
+}
+export default User

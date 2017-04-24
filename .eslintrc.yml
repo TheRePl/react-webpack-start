@@ -22,6 +22,9 @@ rules:
   arrow-parens:
     - warn
     - as-needed
+  brace-style:
+    - error
+    - stroustrup
   comma-dangle:
     - error
     - only-multiline
@@ -39,11 +42,10 @@ rules:
   react/jsx-uses-vars: warn
   react/forbid-prop-types: off
   jsx-a11y/no-static-element-interactions: off
-  semi:
-    - error
-    - always
+  semi: off
 
 globals:
   document: false
   window: false
+  localStorage: true
   fetch: true
