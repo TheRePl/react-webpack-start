@@ -1,16 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ImmutableTypes from 'react-immutable-proptypes';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { CLEAR_SERVICE, ADD_SERVICE_COUNT, REDUCE_SERVICE_COUNT } from '../../../actions';
+import React from 'react'
+import PropTypes from 'prop-types'
+import ImmutableTypes from 'react-immutable-proptypes'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { CLEAR_SERVICE, ADD_SERVICE_COUNT, REDUCE_SERVICE_COUNT } from '../../../actions'
 
 function CartList(props) {
   return (
     <div className="cartList">
       <div className="header">
         <a
-          onTouchTap={() => { props.CLEAR_SERVICE(); }}
+          onTouchTap={() => props.CLEAR_SERVICE()}
           className="clearAll"
         >
           清空
@@ -45,7 +45,7 @@ function CartList(props) {
         }
       </ul>
     </div>
-  );
+  )
 }
 
 CartList.defaultProps = {
@@ -54,7 +54,7 @@ CartList.defaultProps = {
   ADD_SERVICE_COUNT: () => false,
   REDUCE_SERVICE_COUNT: () => false,
   CLEAR_SERVICE: () => false
-};
+}
 
 CartList.propTypes = {
   $$order: ImmutableTypes.list,
@@ -62,15 +62,15 @@ CartList.propTypes = {
   ADD_SERVICE_COUNT: PropTypes.func,
   REDUCE_SERVICE_COUNT: PropTypes.func,
   CLEAR_SERVICE: PropTypes.func
-};
+}
 
 function mapStateToProps(state) {
   return {
     $$order: state.$$order
-  };
+  }
 }
 export default connect(mapStateToProps, {
   CLEAR_SERVICE,
   ADD_SERVICE_COUNT,
   REDUCE_SERVICE_COUNT
-})(CartList);
+})(CartList)

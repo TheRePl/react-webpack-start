@@ -1,10 +1,12 @@
-import { combineEpics } from 'redux-observable';
-import fetchService from './fetchService';
-import fetchRoot from './fetchRoot';
+import { combineEpics } from 'redux-observable'
+import rootEpics from './rootEpics'
+import orderEpics from './orderEpics'
+import serviceEpics from './serviceEpics'
 
 const epics = [
-  fetchRoot,
-  fetchService
-];
+  ...rootEpics,
+  ...orderEpics,
+  ...serviceEpics
+]
 
-export default combineEpics(...epics);
+export default combineEpics(...epics)

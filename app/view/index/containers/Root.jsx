@@ -1,24 +1,24 @@
-import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import ImmutableTypes from 'react-immutable-proptypes';
-import { Link } from 'react-router-dom';
-import Footer from '../components/Footer';
-import Slider from '../components/Root/Slider';
-import { FETCH_ROOT_LIST } from '../actions';
+import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import ImmutableTypes from 'react-immutable-proptypes'
+import { Link } from 'react-router-dom'
+import Footer from '../components/Footer'
+import Slider from '../components/Root/Slider'
+import { FETCH_ROOT_LIST } from '../actions'
 
 /**
  * @静态资源
  * */
-import _menu0 from '../../../source/img/menu/0.png';
-import _menu1 from '../../../source/img/menu/1.png';
-import _menu2 from '../../../source/img/menu/2.png';
-import _menu3 from '../../../source/img/menu/3.png';
-import _menu4 from '../../../source/img/menu/4.png';
-import _menu5 from '../../../source/img/menu/5.png';
-import _menu6 from '../../../source/img/menu/6.png';
-import _menu7 from '../../../source/img/menu/7.png';
-import _menu8 from '../../../source/img/menu/8.png';
+import _menu0 from '../../../source/img/menu/0.png'
+import _menu1 from '../../../source/img/menu/1.png'
+import _menu2 from '../../../source/img/menu/2.png'
+import _menu3 from '../../../source/img/menu/3.png'
+import _menu4 from '../../../source/img/menu/4.png'
+import _menu5 from '../../../source/img/menu/5.png'
+import _menu6 from '../../../source/img/menu/6.png'
+import _menu7 from '../../../source/img/menu/7.png'
+import _menu8 from '../../../source/img/menu/8.png'
 
 const menus = [
   { name: '洗衣', icon: _menu0, hash: '#laundry', id: 0 },
@@ -30,22 +30,22 @@ const menus = [
   { name: '维修', icon: _menu6, hash: '#aegis', id: 6 },
   { name: '生鲜', icon: _menu7, hash: '#fresh', id: 7 },
   { name: '开锁', icon: _menu8, hash: '#unlock', id: 8 }
-];
+]
 
 class Root extends PureComponent {
   static propTypes() {
     return {
       $$rootData: ImmutableTypes.map.isRequired,
       FETCH_ROOT_LIST: PropTypes.func.isRequired
-    };
+    }
   }
 
   componentWillMount() {
-    this.props.FETCH_ROOT_LIST();
+    this.props.FETCH_ROOT_LIST()
   }
 
   render() {
-    const props = this.props;
+    const props = this.props
     return (
       <div id="box">
         <Link className="selectAreaIcon" to={'/area'} />
@@ -84,7 +84,7 @@ class Root extends PureComponent {
                     <p>{item.unit}</p>
                     <strong>￥{item.price}</strong>
                     <a className="shopCart">
-                      <span>.</span>
+                      <span>{}</span>
                     </a>
                   </div>
                 </li>
@@ -94,15 +94,15 @@ class Root extends PureComponent {
         </div>
         <Footer />
       </div>
-    );
+    )
   }
 }
 
 function mapStateToProps(state) {
   return {
     $$rootData: state.$$rootData
-  };
+  }
 }
 export default connect(mapStateToProps, {
   FETCH_ROOT_LIST
-})(Root);
+})(Root)

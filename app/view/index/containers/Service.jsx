@@ -37,7 +37,7 @@ function Service({ location }) {
       <Route
         path={'/service/cartList'}
         render={() => (
-          <div id="box">
+          <div>
             <CartList location={location} />
             <SelectServiceFooter location={location} />
           </div>

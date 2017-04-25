@@ -36,7 +36,7 @@ const $$order = createReducer([], {
   },
 });
 
-const service = createReducer([], {
+const $$service = createReducer([], {
   [SELECT_SERVICE](state, action) {
     return List(action.payload);
   },
@@ -44,5 +44,5 @@ const service = createReducer([], {
 
 export default {
   $$order,
-  service,
+  $$service,
 };

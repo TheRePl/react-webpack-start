@@ -1,12 +1,12 @@
 import {
   FETCH_ROOT_LIST,
   GET_ROOT_LIST
-} from '../actions';
-import rootBanner from '../../../source/img/service/itemHead.png';
+} from '../actions'
+import rootBanner from '../../../source/img/service/itemHead.png'
 
-const imgApi = 'http://www.idreamcity.cn/api/v1/cms';
+const imgApi = 'http://www.idreamcity.cn/api/v1/cms'
 
-export default function fetchRootList(action$, store, { getJSON }) {
+function fetchRootList(action$, store, { getJSON }) {
   return action$.filter(action => action.type === FETCH_ROOT_LIST().type)
     .switchMap(() => getJSON(imgApi)
       .map(res => res.homePage)
@@ -56,5 +56,7 @@ export default function fetchRootList(action$, store, { getJSON }) {
           id: 4
         }
       ]
-    }));
+    }))
 }
+
+export default [fetchRootList]

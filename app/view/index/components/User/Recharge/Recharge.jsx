@@ -1,11 +1,12 @@
-import React from 'react';
-import { NavLink, Route } from 'react-router-dom';
-import img0 from '../../../../../source/img/user/recharge.png';
-import img1 from '../../../../../source/img/user/user.png';
-import img2 from '../../../../../source/img/user/2.jpg';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { NavLink, Route } from 'react-router-dom'
+import img0 from '../../../../../source/img/user/recharge.png'
+import img1 from '../../../../../source/img/user/user.png'
+import img2 from '../../../../../source/img/user/2.jpg'
 
 function Recharge({ path }) {
-  console.log(path);
+  console.log(path)
   return (
     <div id="recharge">
       <img src={img0} alt="" width="100%" />
@@ -40,83 +41,97 @@ function Recharge({ path }) {
       <Route
         path={`${path.match.path}/online`}
         render={() => (
-          <div className="card1">
-            <h2>洗衣充值送卷</h2>
-            <ul className="clear list1">
-              <li className="active">
-                <p>充200元</p>
-                <p>送50洗衣卷</p>
-              </li>
-              <li >
-                <p>充500元</p>
-                <p>送150洗衣卷</p>
-              </li>
-              <li >
-                <p>充1000元</p>
-                <p>送300洗衣卷</p>
-              </li>
-              <li >
-                <p>充2000元</p>
-                <p>送700洗衣卷</p>
-              </li>
-            </ul>
-            <h2>保洁充值送卷</h2>
-            <ul className="clear list2">
-              <li >
-                <p>充200元</p>
-                <p>送40洗衣卷</p>
-              </li>
-              <li className="active">
-                <p>充520元</p>
-                <p>送120洗衣卷</p>
-              </li>
-              <li >
-                <p>充200元</p>
-                <p>送50洗衣卷</p>
-              </li>
-              <li >
-                <p>充2020元</p>
-                <p>送560洗衣卷</p>
-              </li>
-            </ul>
-            <h2>随意充</h2>
-            <input type="text" placeholder="自定义金额" className="inputPrice" />
+          <div className="cardBox1">
+            <div className="card1">
+              <h2>洗衣充值送卷</h2>
+              <ul className="clear list1">
+                <li className="active">
+                  <p>充200元</p>
+                  <p>送50洗衣卷</p>
+                </li>
+                <li >
+                  <p>充500元</p>
+                  <p>送150洗衣卷</p>
+                </li>
+                <li >
+                  <p>充1000元</p>
+                  <p>送300洗衣卷</p>
+                </li>
+                <li >
+                  <p>充2000元</p>
+                  <p>送700洗衣卷</p>
+                </li>
+              </ul>
+              <h2>保洁充值送卷</h2>
+              <ul className="clear list2">
+                <li >
+                  <p>充200元</p>
+                  <p>送40洗衣卷</p>
+                </li>
+                <li className="active">
+                  <p>充520元</p>
+                  <p>送120洗衣卷</p>
+                </li>
+                <li >
+                  <p>充200元</p>
+                  <p>送50洗衣卷</p>
+                </li>
+                <li >
+                  <p>充2020元</p>
+                  <p>送560洗衣卷</p>
+                </li>
+              </ul>
+              <h2>随意充</h2>
+              <input type="text" placeholder="自定义金额" className="inputPrice" />
+            </div>
+            <input type="button" value="立即充值" />
           </div>
         )}
       />
       <Route
         path={`${path.match.path}/card`}
         render={() => (
-          <div className="card2">
-            <p>
-              卡号
-              <input type="text" placeholder="请输入卡号" />
-            </p>
-            <p>
-              密码
-              <input type="password" placeholder="请输入密码" />
-            </p>
+          <div className="cardBox2">
+            <div className="card2">
+              <p>
+                卡号
+                <input type="text" placeholder="请输入卡号" />
+              </p>
+              <p>
+                密码
+                <input type="password" placeholder="请输入密码" />
+              </p>
+            </div>
+            <input type="button" value="立即充值" />
           </div>
         )}
       />
       <Route
         path={`${path.match.path}/roll`}
         render={() => (
-          <div className="card2">
-            <p>
-              卷号
-              <input type="text" placeholder="请输入卡号" />
-            </p>
-            <p>
-              密码
-              <input type="password" placeholder="请输入密码" />
-            </p>
+          <div className="cardBox2">
+            <div className="card2">
+              <p>
+                卷号
+                <input type="text" placeholder="请输入卡号" />
+              </p>
+              <p>
+                密码
+                <input type="password" placeholder="请输入密码" />
+              </p>
+            </div>
+            <input type="button" value="立即充值" />
           </div>
         )}
       />
-      <input type="button" value="立即充值" />
     </div>
-  );
+  )
 }
 
-export default Recharge;
+Recharge.defaultProps = {
+  path: {}
+}
+Recharge.propTypes = {
+  path: PropTypes.object
+}
+export default Recharge

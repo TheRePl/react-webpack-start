@@ -1,11 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ImmutableTypes from 'react-immutable-proptypes';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import ImmutableTypes from 'react-immutable-proptypes'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
-function Footer({ $$order, location }) {
-  console.log(location);
+function Footer({ $$pay, location }) {
   return (
     <div id="serviceFooter">
       <div className="content">
@@ -19,8 +18,7 @@ function Footer({ $$order, location }) {
           {
             <span>
               {
-                $$order.map(item => Number.parseInt(item.get('num'), 10))
-                  .reduce((pre, next) => pre + next) || 0
+                $$pay.get('num') || 0
               }
             </span>
           }
@@ -29,8 +27,7 @@ function Footer({ $$order, location }) {
           预估价格：￥
           <strong>
             {
-              $$order.map(item => Number.parseInt(item.get('price') * item.get('num'), 10))
-                .reduce((pre, next) => pre + next) || 0
+              $$pay.get('price') || 0
             }
           </strong>
         </p>
@@ -45,21 +42,21 @@ function Footer({ $$order, location }) {
         </Link>
       </div>
     </div>
-  );
+  )
 }
 
 Footer.defaultProps = {
-  $$order: [],
+  $$pay: {},
   location: {}
-};
+}
 Footer.propTypes = {
-  $$order: ImmutableTypes.list,
+  $$pay: ImmutableTypes.map,
   location: PropTypes.object
-};
+}
 
 function mapStateToProps(state) {
   return {
-    $$order: state.$$order
-  };
+    $$pay: state.$$pay
+  }
 }
-export default connect(mapStateToProps)(Footer);
+export default connect(mapStateToProps)(Footer)
